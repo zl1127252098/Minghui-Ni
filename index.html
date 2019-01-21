@@ -39,7 +39,7 @@
 
 <div id="#top"></div>
 <section id="home">
-  <div class="banner-container">
+  <div class="banner-container" id="backgroundimages">
     <div class="container"> 
       <div class="heading text-center"> 
         <h2>Yi Zhao & Minghui Ni</h2> 
@@ -130,6 +130,36 @@
 	</div>
 	</section><!--<div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >建站模板</a></div>-->
 
+	<script type="text/javascript">
+		var curIndex = 0;
+		//时间间隔(单位毫秒)，每秒钟显示一张，数组共有3张图片放在img文件夹下。
+		var timeInterval = 3500;
+		
+		                        //定义一个存放照片位置的数组，可以放任意个，在这里放3个
+		var arr = new Array();
+		arr[0] = "images/1.jpeg";
+		arr[1] = "images/2.jpeg";
+		arr[2] = "images/3.jif";
+		arr[3] = "images/4.jpg";
+		arr[4] = "images/5.png";
+		arr[5] = "images/6.jpg";
+		arr[6] = "images/7.jpeg";
+		arr[7] = "images/8.jpeg";
+		arr[8] = "images/9.jpeg";
+		setInterval(changeImg, timeInterval);
+		function changeImg() {
+		
+		                                //获得id名为d1的对象
+		var obj = document.getElementById("backgroundimages");
+		if (curIndex == arr.length - 1) {
+		curIndex = 0;
+		} else {
+		curIndex += 1;
+		}
+		                        //设置d1的背景图片
+		obj.style.backgroundImage= "URL("+arr[curIndex]+")";       //显示对应的图片
+		}
+		</script>
 
 <script src="js/modernizr-latest.js"></script> 
 <script src="js/jquery-1.8.2.min.js" type="text/javascript"></script> 
